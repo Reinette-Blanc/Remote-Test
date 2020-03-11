@@ -19,9 +19,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'QR Scan',
+      url: '/scan',
+      icon: 'md-qr-scanner'
     },
     {
       title: 'Terms of Service',

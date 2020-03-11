@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 @Component({
   selector: 'app-scan',
   templateUrl: './scan.page.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScanPage implements OnInit {
 
-  constructor() { }
+  data: any;
+
+  constructor(private bScan: BarcodeScanner) { }
 
   ngOnInit() {
+  }
+
+  scan() {
+    this.bScan.scan().then((barcodeData) => {
+      this.data = barcodeData.text;
+    }).catch(err => {console.log('Error', err); });
   }
 
 }

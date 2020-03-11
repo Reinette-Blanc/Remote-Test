@@ -15,6 +15,7 @@ import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 import { environment } from '../environments/environment';
 
 import { CalendarModule, CalendarComponent, CalendarResult} from 'ion2-calendar';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -44,6 +45,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   providers: [
     StatusBar,
     CalendarResult,
+    BarcodeScanner,
     CalendarComponent,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
