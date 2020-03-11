@@ -14,3 +14,12 @@
   <h1 class="ion-padding, ion-text-center">Login</h1>
   <firebase-ui></firebase-ui>
 </ion-content>
+
+<ion-content *ngIf = "auth.auth.currentUser">
+  <ion-calendar [(ngModel)]="date"
+              (change)="onChange($event)"
+              [type]="type"
+              [format]="'YYYY-MM-DD'">
+</ion-calendar>
+<h1>{{test}}</h1>
+</ion-content>

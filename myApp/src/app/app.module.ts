@@ -14,6 +14,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 import { environment } from '../environments/environment';
 
+import { CalendarModule, CalendarComponent, CalendarResult} from 'ion2-calendar';
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
@@ -36,10 +38,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    CalendarModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [
     StatusBar,
+    CalendarResult,
+    CalendarComponent,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

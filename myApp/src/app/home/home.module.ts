@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { FirebaseUIModule } from 'firebaseui-angular';
+import { CalendarModule } from 'ion2-calendar';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { FirebaseUIModule } from 'firebaseui-angular';
     FormsModule,
     IonicModule,
     FirebaseUIModule,
+    CalendarModule,
     RouterModule.forChild([
       {
         path: '',

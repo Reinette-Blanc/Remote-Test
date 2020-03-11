@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'terms',
     loadChildren: () => import('./terms/terms.module').then( m => m.TermsPageModule)
+  },
+  {
+    path: 'scan',
+    loadChildren: () => import('./scan/scan.module').then( m => m.ScanPageModule)
   }
 ];
 
