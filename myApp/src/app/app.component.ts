@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { AngularFireAuth} from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,18 +22,15 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
-    },
-    {
-      title: 'Logout',
-      url: 'login',
-      icon: 'md-exit'
     }
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private auth: AngularFireAuth,
+    private navCtrl: NavController
   ) {
     this.initializeApp();
   }
@@ -42,5 +40,12 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  logout() {
+    if (this.auth.auth.currentUser) {
+      this.navCtrl.navigateRoot('/home')
+      .then(() => {this.auth.auth.signOut().then(() => {location.reload(); }); });
+    }
   }
 }
