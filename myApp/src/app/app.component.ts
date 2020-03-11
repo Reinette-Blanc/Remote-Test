@@ -22,6 +22,16 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Terms of Service',
+      url: '/terms',
+      icon: 'paper'
+    },
+    {
+      title: 'Privacy Policy',
+      url: '/privacy',
+      icon: 'finger-print'
     }
   ];
 
