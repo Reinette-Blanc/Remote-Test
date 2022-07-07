@@ -30,7 +30,7 @@
     "firebaseui": "^4.4.0",
     "firebaseui-angular": "^4.0.1",
     "ion2-calendar": "^3.0.0-rc.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
